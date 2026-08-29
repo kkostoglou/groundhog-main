@@ -1,0 +1,184 @@
+v0.16.0 - TBD
+    - Added calculation methods for bending stiffness of a soilmix wall
+    - Added calculation for inertia of steel rebar in a reinforced concrete section
+    - Added calculations for stresses next to a buried earth-retaining structure
+    - Added Chin-Kondler method
+    - Added pile lateral group effect multipliers
+    - TODO: Prepare functionality for SPT fence diagram creation
+    - TODO: Create a BoreholeLogging object (to log properties like RQD, UCS, Point load, ...)
+    - TODO: Add hatching patterns to LogPlot
+    - TODO: Include code for suction caisson penetration in sand + notebook for Deutsche Bucht
+    - TODO: Property mapping takes too much times for CPTs, improve speed of routine
+    - TODO: Implement soil parameter name conventions across groundhog
+    - TODO: Add soil type classification according to Schneider et al (2008)
+
+v0.15.0, 19/09/2025 - The quokka release
+    - Added notebook with soil parameter selection demo
+    - Added plotting for LogPlot and LogPlotMatplotlib with CPT data
+    - Added functionality for quickly selecting layering with a dummy soil profile. The base case is selection from CPT data.
+    - Added functionality for creating a LogPlotMatplotlib with two SoilProfile objects next to it.
+    - Added functionality for clipping points close to layer boundaries in Robertsons chart
+    - Added function for calculating clipping depths at layer transitions
+    - Added Ic and Qtn calculation to CPT normalisation
+    - Added the Schneider et al (2008) chart for plotting CPT data
+    - Started added functionality for pipeline and cable penetration
+    - Added automatic detection of depth column for pydov CPTs
+    - Added secondary soilprofile to LogPlot too
+    - Added functionality for retrieving stratigraphic information from DOV (Flanders 3D geological model)
+    - Added function to retrieve BRO CPT data based on BRO CPT ID
+    - Added function to retrieve BRO stratigraphy based on GeoTop voxel model
+    - Added Cn capping routine written by Ping Li
+    - Added function to prompt user for input on Soil type column in soil profile
+    
+v0.14.0, 03/06/2025 - Ping Li's contribution
+    - .set_cv from ConsolidationCalculation did not accept lists. Fixed thanks to Ricardo Rodriguez Plata 
+    - Added a function for creating a dummy SoilProfile object
+    - Added the solution for dissipation tests according to Teh and Houlsby (1991)
+    - Functionality for liquefaction analysis added by Ping Li
+
+v0.13.0, 11/10/2024 - The Pirate release
+    - Update of requirements to Numpy >= 2.1
+    - Ensured the cv arrays in consolidation calcs are treated as Numpy arrays
+    - Increased the timeout for interactive parameter selection to two minutes
+    - Added formula for calculation of void ratio from dry density
+    - Added conversions between unit weight and density
+    - Added conversions between void ratio and water content
+    - Added CPT-based correlation for Vs according to Stuyts et al (2024)
+    - Added code to allow non-LaTeX axis and trace titles in boilerplate Plotly plots
+
+v0.12.0, 30/03/2024 - Dubai release
+    - Corrected an error in the docstring of the logtime method (groundhog.siteinvestigation.labtesting.compressibility)
+    - Added Readthedocs configuration file (.readthedocs.yaml)
+    - Added article on semi-automated processing of consolidation data (root-time and log-time methods)
+    - Added a peak_picker function for selecting the peak in a load-displacement curve
+    - Deprecated all "old" plotting functionality for parameters in favour of mini-log syntax
+    
+v0.11.0, 01/11/2023 - The Nordic release
+    - Added explicit specification of epsilon_b to the De Beer pile resistance calculation
+    - Added a file with optional requirements (optional-requirements.txt) for pydov and geotexxx
+    - Small modifications for automatic soil parameter selection to cope with NaN values
+    - Changed fillcolordict for pile capacity profiles
+    - Set plugged unit end bearing for Alm & Hamre equal to coring end bearing for consistent axcap results
+    - Added functions for semi-automated processing of consolidation timeseries based on root-time and log-time method
+
+v0.10.0, 21/03/2023 - VOP
+    - Added correlation for K0 to critical state friction angle according to Mesri and Hayat (1993)
+    - Added correlation for K0 to plasticity index according to Kenney (1959)
+    - Changed function arguments for plasticity index and OCR to comply with ``ocr`` and ``pi`` naming
+    - Removed the warning for pydov import after the suggestion of a slightly inebriated Frederik Horn
+    - Added functionality for selection an unlimited number of additional layers in a LogPlotMatplotlib
+    - Added functionality for calculating settlements using constrained modulus
+    - Added CPT-based correlation for constrained modulus according to Robertson (2009)
+
+v0.9.0, 02/02/2023 - Groundhog day 2023
+    - Added shearwavevelocity_compressionindex_cha for estimate shear wave velocity when stress conditions and packing density are known
+    - Refactoring of code for element properties in a CalculationGrid object
+    - Added axial capacity basic code and notebook
+    - Added hatching to Matplotlib logplots
+    - Added stress dilatancy theory according to Bolton (1986)
+    
+v0.8.0, 28/08/2022 - ISFOG2020 release
+    - Improved margin settings for PSD plots
+    - Added correlation between acoustic impedance and bulk unit weight from Chen et al (2021)
+    - Added common-origin approach for liquefaction assessment according to Saye et al (2021)
+    - Implemented cyclic shear stress ratio equations according to Youd et al (2001)
+    - Small change for the plotting functionality of Prandtl's failure mechanism
+    - Error corrected in docstring of undercompaction_cohesionless_ladd, mathematical symbol for undercompaction for shallowest and deepest layers were switched.
+    - Added possibility for alternative depth, qc, fs and u2 keys in load_pydov
+    - Added new modules for standards. Started with Eurocode 7-based parameter selection
+    - Modified Koppejan calculation to use standard 'Depth from [m]' and 'Depth to [m]' columns for the layering
+    - Added LogPlotMatplotlib for plotting of logs with Matplotlib
+    - Added functionality for parsing AGS3.1 files using the agsformat argument in the AGSConverter
+    - Added possibility of plotting friction ratio Rf instead of another panel to plot_raw_pcpt
+    - Bugfix in Boussinesq stress calculation below a strip footing
+    - Add general functionality for gridded calculations (``CalculationGrid`` in the ``soilprofile`` module)
+    - Added 1D excess pore pressure dissipation calculations based on finite difference analysis
+    - Added class for settlement calculations (``SettlementCalculation``) in the ``shallowfoundations.settlement`` module
+    - Added module for excavations and started with code for coefficients of active and passive earth pressure
+    - Changed license to GNU GPLv3
+    - Added placeholders for constitutive modelling functionality (constitutivemodels module)
+    - Added tutorials for settlement and consolidation functionality
+
+v0.7.0, 20/10/2021 -- Streamlit unleashed
+    - Update to Readme to fix up formatting on Pypi (thanks to Thomas van der Linden for highlighting)
+    - Updated plotting ranges for pore pressure panel on CPT raw data plot
+    - Started with streamlit apps (authored by Berk Demir)
+    - Updated handling of pushing in PCPTProcessing ('Push' is the default column name for Push number)
+    - Added function failuremechanism_prandtl for calculating and plotting the Prandtl failure mechanism
+    - Added function for estimation of shear modulus reduction and material damping according to Darendeli (2001)
+    - Added correlation between qc, void ratio and Gmax for clay according to Mayne and Rix (1993)
+    - Added correlation between friction angle and SPT N number according to Kulhawy and Mayne (1990)
+    - Added correlation between Gmax and PI, OCR and overburden stress for clays according to Andersen (2015)
+    - Added the method parameter_at_depth on SoilProfile objects to retrieve the value of a specific parameter at the selected depth.
+    - Added correlation between CPT properties and Vs according to Andrus (2007)
+    - Added correlation between CPT properties and Vs according to Hegazy and Mayne (2006)
+    - Added Vs-CPT correlation according to Long and Donohue (2010)
+    - Added soil type determination from Vs and Qt according to Long and Donohue (2010)
+    - Add Vs-CPT correlation according to Karray et al (2011)
+    - Add Vs-CPT correlation according to Wride et al (2000)
+    - Add Vs-CPT correlation according to Tonni and Simonini (2013)
+    - Add Vs-CPT correlations according to McGann et al (2018) - Both for Christchurch general soils and Banks peninsula loess soils
+
+v0.6.1, 23/07/2021 -- Bugfix release
+    - Fixed bug in offset calculation for fence diagrams
+
+v0.6.0, 30/06/2021 -- SPT release
+    - Bugfix for relativedensity categories (relativedensity_categories)
+    - Added correlation between liquid limit and cv (cv_liquidlimit_usnavy)
+    - Started implementing SPT corrections and correlations (overburden correction and N60 correction)
+    - Started implementing an SPTProcessing class
+    - Added correlation between relative density and HS Small parameters in sand (hssmall_parameters_sand)
+    - Updated load_pydov for using pydov 2.1.0 (different key for depth)
+    - Updated normalise_pcpt function to allow Rf calculation as fs/qc for CPTs without pore pressure measurements
+    - Added code for hiding of all legends in plot_with_log
+    - Refactored code for shared functionality between CPT and SPT tests (InsituTestProcessing base class)
+    - Added notebooks for gINT data import for Windows and Mac/Linux
+    - Added method convert_depth_reference to SoilProfile to allow converting between depth units quickly (e.g. ft to m)
+    - Refactored overburden calculation for in-situ tests to always make use of soil profiles
+    - Added method for application of correlations to SPTProcessing class
+    - Added boolean to allow profile plots using lat/lon coordinates + necessary functionality to calculate offsets using pyproj
+    - Added correlations for relative density and undrained shear strength to spt_correlations
+
+v0.5.0, 12 April 2021 -- CGS webinar release
+    - Added extension of soil profile and cone properties to CPT maximum depth by default in map_properties
+    - Fixed up plotting of normalised properties and soil parameters for discontinuous CPTs
+    - Added correlation for K0 from CPT for sand according to Mayne (2007)
+    - Added Robertson soil type classes to behaviourindex_pcpt_robertsonwride function and added separate function to convert Ic to soil type
+    - Added modified Gmax correlation from CPT with effect of Bq according to Puechen et al (2020)
+    - Added non-normalised soil behaviour type index Isbt correlation
+    - Fixed a plotting bug leading to a depth shift in De Beer's method for unit base resistance
+    - Added a general LogPlot class for creating paneled plots with a log
+    - Include correlation for drained secant modulus from cone tip resistance and vertical effective stress
+    - Include correlation for damping according to Seed & Idriss (1970)
+    - Modification to plot_properties method for CPTs to allows showing/hiding of legends and plotting of layer interfaces
+    - Added inverse correlation for cone resistance from relative density for OC sand according to Baldi et al
+    - Include standard PSD plot and Plasticity chart
+    - Excel export of CPT with data, cone properties, layering and location info
+
+v0.4.0, 06 January 2021 -- 2021 New Year's release
+    - Added a module for dynamic soil properties to soildynamics
+    - Bugfix for SoilProfile from dataframe
+    - Added a module for soil parameter and soil type classification and moved relative density classification to it
+    - Added correction for total sleeve friction to PCPT normalisation (optional)
+    - Added correlation of Mayne et al (2010) for unit weight from sleeve friction
+    - Added correlation of Robertson and Cabal (2015) for shear wave velocity from cone resistance and soil behaviour type index
+    - Added formula to convert shear wave velocity and density to small-strain shear modulus
+    - GEF file import for PCPT processing
+    - Added load_ags method for importing AGS data with a single line of code
+    - Cyclic interaction diagrams and associated functions from Andersen (2015)
+
+v0.3.0, 14 November 2020 -- End of 2020 update
+    - Shallow foundation envelope calculations
+    - Shallow foundation capacity tutorial
+    - Added Settlement tutorial
+    - Added permeability calculation according to Hazen (1892)
+    - Added correlation between plasticity index and friction angle according to Terzaghi, Peck and Mesri (1996)
+    - Added functionality for converting Pandas dataframes into SoilProfile objects
+    - Added plotting functionality for plotting longitudinal profiles of multiple PCPTProcessing objects
+    - Added plotting code for fence diagram with soil profiles
+    - Added correlation for liquefaction probability based on CPT data according to Moss et al
+    - Added equation for cyclic shear stress ratio according Moss et al.
+    - Added correlation for liquefaction triggering according to Robertson & Fear (1995)
+    - Added module for laboratory testing. Starting with submodule for sample preparation and undercompaction calculation according to Ladd (1978)
+
+v0.2.0 , 20 October 2020 -- Initial release.

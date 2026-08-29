@@ -1,0 +1,10 @@
+pandas
+plotly
+scipy
+xlrd
+openpyxl
+jinja2
+xlsxwriter
+pyproj
+groundhog
+matplotlib
