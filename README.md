@@ -21,7 +21,7 @@ The added interface is implemented in [`GroundhogDesktopGUI.py`](GroundhogDeskto
 
 ## New user? Start here
 
-You do not need to understand Python or GitHub to use the Windows application. First decide what you want to do:
+The project is available both as a ready-made Windows application and as editable Python source. First decide what you want to do:
 
 ### I only want to use the program
 
@@ -67,7 +67,7 @@ The files shown on the main GitHub page are the editable source. The ready-to-ru
 4. Extract the complete ZIP file to a local folder.
 5. Double-click `GroundhogDesktop.exe`.
 
-Python is not required when using the packaged executable. Windows may show a SmartScreen warning because the executable is not digitally signed; verify that it came from this repository and compare its checksum with the included `SHA256SUMS.txt`.
+The release bundle includes the ready-made Windows application, documentation, and a copy of the Python source. Developers can also download or clone the latest source directly from this repository. Windows may show a SmartScreen warning because the executable is not digitally signed; verify that it came from this repository and compare its checksum with the included `SHA256SUMS.txt`.
 
 ### Main operating workflow
 
