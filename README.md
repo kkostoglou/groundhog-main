@@ -1,10 +1,60 @@
-Groundhog - A general-purpose geotechnical package
-====================================================
+# Groundhog Desktop — PCPT and Shallow-Foundation Analysis
 
-Desktop application
--------------------
+## About this project
 
-This repository includes a native Windows desktop application for PCPT processing and shallow-foundation capacity analysis. See [USER_GUIDE.md](USER_GUIDE.md) for operating instructions and [RELEASE_GUIDE.md](RELEASE_GUIDE.md) for source launch, executable builds, and GitHub publishing.
+This repository is a modification and desktop extension of the open-source [Groundhog geotechnical Python package](https://github.com/snakesonabrain/groundhog). It retains the Groundhog calculation library and adds a user-friendly graphical interface for engineers who want to perform PCPT processing and shallow-foundation capacity calculations without writing Python code.
+
+The desktop application provides:
+
+- guided manual and PCPT-assisted calculation workflows;
+- editable Excel PCPT data import, inspection, correction, and export;
+- PCPT normalization and derivation of representative soil parameters;
+- drained and undrained shallow-foundation analysis;
+- rectangular and circular geometry, eccentric loading, and skirt options;
+- unfactored and factored vertical-horizontal capacity envelopes;
+- detailed, traceable analytical calculations; and
+- export of calculation reports and graphs to PDF.
+
+The added interface is implemented in [`GroundhogDesktopGUI.py`](GroundhogDesktopGUI.py). The original Groundhog library remains under [`groundhog/`](groundhog/) and is credited to its original author and contributors under the GNU GPLv3 license.
+
+> **Engineering notice:** This software is a calculation aid. Users must independently verify soil parameters, correlations, drainage assumptions, resistance factors, load combinations, results, and compliance with the governing design requirements.
+
+## Quick start for Windows users
+
+### Run the ready-made application
+
+1. Open this repository's [Releases](../../releases) page.
+2. Open the latest release.
+3. Download `GroundhogDesktop-Windows.zip` from **Assets**.
+4. Extract the complete ZIP file to a local folder.
+5. Double-click `GroundhogDesktop.exe`.
+
+Python is not required when using the packaged executable. Windows may show a SmartScreen warning because the executable is not digitally signed; verify that it came from this repository and compare its checksum with the included `SHA256SUMS.txt`.
+
+### Main operating workflow
+
+1. Choose **Manual foundation analysis** or **PCPT-assisted foundation analysis**.
+2. For PCPT analysis, load an Excel file containing `z [m]`, `qc [MPa]`, `fs [MPa]`, and `u2 [MPa]` columns.
+3. Review or edit the imported data and choose the calculation depth interval.
+4. Calculate and transfer the PCPT-derived parameters to the foundation form.
+5. Enter the foundation geometry, drainage condition, and resistance factors.
+6. Calculate the bearing capacity and review the V-H envelope.
+7. Review the analytical calculations and export the PDF report.
+
+See the complete [User's Guide](USER_GUIDE.md) for field definitions, detailed procedures, result interpretation, troubleshooting, and engineering limitations.
+
+## Run from source
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-desktop.txt
+.\.venv\Scripts\python.exe -m pip install --no-deps -e .
+.\.venv\Scripts\python.exe GroundhogDesktopGUI.py
+```
+
+Alternatively, after installing the dependencies, double-click `run_groundhog.bat`. See [Building and Publishing Groundhog Desktop](RELEASE_GUIDE.md) for executable build instructions.
+
+## Original Groundhog package
 
 [![PyPI version](https://badge.fury.io/py/groundhog.svg)](https://badge.fury.io/py/groundhog)
 
