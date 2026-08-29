@@ -19,6 +19,44 @@ The added interface is implemented in [`GroundhogDesktopGUI.py`](GroundhogDeskto
 
 > **Engineering notice:** This software is a calculation aid. Users must independently verify soil parameters, correlations, drainage assumptions, resistance factors, load combinations, results, and compliance with the governing design requirements.
 
+## New user? Start here
+
+You do not need to understand Python or GitHub to use the Windows application. First decide what you want to do:
+
+### I only want to use the program
+
+1. On this GitHub repository page, find **Releases** in the right-hand sidebar. On a narrow screen, you may need to scroll down.
+2. Click the newest release, such as **Groundhog Desktop v1.0.0**.
+3. At the bottom of the release, expand **Assets** if it is collapsed.
+4. Click `GroundhogDesktop-Windows.zip` to download it.
+5. Open your Windows **Downloads** folder.
+6. Right-click the downloaded ZIP and select **Extract All…**. Do not run the program from inside the ZIP.
+7. Open the extracted `GroundhogDesktop` folder.
+8. Double-click `GroundhogDesktop.exe`.
+9. If Windows SmartScreen appears, confirm that the file came from this repository, select **More info**, and then select **Run anyway** if you trust it.
+
+When the application opens:
+
+1. Choose **Start manual analysis** if you already know the foundation and soil parameters.
+2. Choose **Start PCPT-assisted analysis** if you want to load and process an Excel PCPT file.
+3. Work through the numbered steps shown on the left side of the application.
+4. Read the status bar at the bottom if a field or calculation needs attention.
+5. After calculating, review **Analytical Calculation Results** and use **Save PDF** to export the report.
+
+For a first trial, choose the PCPT-assisted workflow and select **Use and load bundled example**. This lets you explore the application without preparing your own workbook.
+
+> **Important:** Do not use GitHub's green **Code → Download ZIP** button when you only want to run the program. That button downloads the source code. Download `GroundhogDesktop-Windows.zip` from **Releases → Assets** instead.
+
+### I want to inspect or modify the source code
+
+1. Select the green **Code** button near the top of the repository.
+2. Select **Download ZIP**, or copy the displayed repository URL and clone it with Git.
+3. Extract the source ZIP if you downloaded it.
+4. Open `USER_GUIDE.md` for full operating instructions.
+5. Follow **Run from source** below to create the Python environment and start the application.
+
+The files shown on the main GitHub page are the editable source. The ready-to-run Windows executable is distributed separately through **Releases**.
+
 ## Quick start for Windows users
 
 ### Run the ready-made application
